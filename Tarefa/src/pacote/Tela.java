@@ -6,9 +6,9 @@
 package pacote;
 
 import javax.swing.JFrame;
-import Tarefa.pacote.PessoaJuridica; 
-import Tarefa.pacote.PessoaJuridica; 
-import Tarefa.pacote.funcionario;
+import pacote.PessoaJuridica; 
+import pacote.PessoaJuridica; 
+import pacote.funcionario;
 
 /**
  *

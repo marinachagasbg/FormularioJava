@@ -144,7 +144,7 @@ public class PessoaFisica extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        DataNascimento = jTextField3.getText();  
+        String DataNascimento = jTextField3.getText();  
     }//GEN-LAST:event_jTextField3ActionPerformed
 
     /**
