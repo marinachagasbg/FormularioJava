@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package pacote;
+import backend.ControllerCidadeEstado;
 
 /**
  *
@@ -11,6 +12,7 @@ package pacote;
  */
 public class Lugar extends javax.swing.JFrame {
 
+    ControllerCidadeEstado Controller = new ControllerCidadeEstado();
     /**
      * Creates new form Lugar
      */
@@ -145,6 +147,14 @@ public class Lugar extends javax.swing.JFrame {
     private void getEstado(){
         String Nome = jTextField2.getText(); 
         String Sigla = jTextField1.getText(); 
+        boolean retorno;
+        
+        try{
+            retorno = Controller.InsereEstado(Nome, Sigla);
+        }catch(Exception e){
+            System.out.println("Erro na inserção do estado!!");
+        }
+        
     }
     
     private void getCidade(){

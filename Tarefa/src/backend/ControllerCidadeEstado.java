@@ -20,8 +20,9 @@ public class ControllerCidadeEstado {
     
     public static boolean InsereEstado(String estado, String sigla){
         boolean retorno;
-		
-        String sql = "INSERT INTO estados(estado_nome, estado_sigla) VALUES (" + estado + "," + sigla + ")";
+        
+        String sql = "INSERT INTO estados (estado_nome, estado_sigla) VALUES ('"+estado+"','"+sigla+"')";
+        System.out.println(sql);
         retorno = database.ExecutaSQL(sql);
         
         return retorno;
@@ -29,7 +30,7 @@ public class ControllerCidadeEstado {
     public static boolean InsereCidade(String cidade){
         boolean retorno;
 		
-        String sql = "INSERT INTO cidades(cidade_nome) VALUES (" + cidade + ")";
+        String sql = "INSERT INTO cidades (cidade_nome) VALUES ('" + cidade + "')";
         retorno = database.ExecutaSQL(sql);
       
         return retorno;
