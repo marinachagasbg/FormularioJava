@@ -4,16 +4,9 @@
  * and open the template in the editor.
  */
 package pacote;
-<<<<<<< HEAD
 import backend.ControllerCidadeEstado;
 
-=======
 import pacote.APrimeiraTela;
->>>>>>> e3ee15464b8c87e8b6c0aa7c538fe7cab524cc61
-/**
- *
- * @author Marina
- */
 public class Lugar extends javax.swing.JFrame {
 
     ControllerCidadeEstado Controller = new ControllerCidadeEstado();
