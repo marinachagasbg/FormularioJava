@@ -43,10 +43,10 @@ public class funcionario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Liberation Serif", 1, 18)); // NOI18N
         jLabel1.setText("Cadastro de Funcionário");
 
-        jLabel2.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Liberation Serif", 0, 15)); // NOI18N
         jLabel2.setText("ID da Pessoa");
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -55,10 +55,10 @@ public class funcionario extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Liberation Serif", 0, 15)); // NOI18N
         jLabel3.setText("Salário ");
 
-        jLabel4.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Liberation Serif", 0, 15)); // NOI18N
         jLabel4.setText("Comissão");
 
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
@@ -67,7 +67,7 @@ public class funcionario extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Liberation Serif", 0, 15)); // NOI18N
         jLabel5.setText("Data de Contratação");
 
         jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
@@ -78,6 +78,7 @@ public class funcionario extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setFont(new java.awt.Font("Liberation Serif", 0, 15)); // NOI18N
         jButton1.setText("Voltar");
         jButton1.setToolTipText("");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -106,7 +107,7 @@ public class funcionario extends javax.swing.JFrame {
                             .addComponent(jLabel4)
                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addContainerGap(150, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
