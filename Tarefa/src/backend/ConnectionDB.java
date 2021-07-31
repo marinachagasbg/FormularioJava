@@ -78,6 +78,7 @@ public class ConnectionDB {
 				
 			}catch(Exception e) {
 				System.out.println("Erro na execução da query SQL!!");
+                                e.printStackTrace();
 				return (false);
 			}
 		}
