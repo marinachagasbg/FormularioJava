@@ -183,7 +183,14 @@ public class Lugar extends javax.swing.JFrame {
     }
     
     private void getCidade(){
-        String Nome = jTextField2.getText(); 
+        String Nome = jTextField2.getText();
+        boolean retorno;
+        
+        try{
+            retorno = Controller.InsereCidade(Nome);
+        }catch(Exception e){
+            System.out.println("Erro na inserção da cidade!!");
+        }
     }
         
    
