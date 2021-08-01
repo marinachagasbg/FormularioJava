@@ -9,7 +9,7 @@ package classes;
  *
  * @author Marina
  */
-public class PessoaFisica extends Pessoa{
+public class PessoaFisicaClasse extends Pessoa{
     public String CPF; 
     public String RG; 
     public String DataNascimento; 

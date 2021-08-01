@@ -7,15 +7,16 @@ package pacote;
 import pacote.Tela;
 import pacote.funcionario;
 import classes.Pessoa;
+import classes.PessoaFisicaClasse;
 import backend.ControllerPessoas;
-import classes.Pessoa;
+
 /**
  *
  * @author Marina
  */
 public class PessoaFisica extends javax.swing.JFrame {
     
-    String CPF, RG, DataNascimento; 
+    static String CPF, RG, DataNascimento; 
     
     static Pessoa pessoa2;
     
@@ -179,25 +180,30 @@ public class PessoaFisica extends javax.swing.JFrame {
    
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
        getCampos(); 
-        if(jCheckBox1.isSelected()){
-            funcionario fun = new funcionario(); 
-            fun.setVisible(true); 
-            dispose(); 
-        }
-        else{
-            boolean res;
-            res = control.InserePessoaFisica(pessoa2,CPF,RG,DataNascimento);
-            if(res == true)
-            {
-                System.out.println("PessoaFisica inserida com sucesso!");
-            }else{
-               System.out.println("Falha em inserir PessoaFisica");
-          
-            }
-                //escreve pessoa fisica no banco oii
-            dispose();
-        }
+       
+       boolean res;
+       // Cadastrar Pessoa Fisica se chegou aqui
+       res = control.InserePessoaFisica(pessoa2,CPF,RG,DataNascimento);
+       if(res == true)
+       {
+            System.out.println("PessoaFisica inserida com sucesso!");
+       }
+       else
+       {
+            System.out.println("Falha em inserir PessoaFisica");
+       }
+       
+       // Se entrar no if a Pessoa Fisica Atual é um funcionário.
+       if(jCheckBox1.isSelected()){
+           funcionario fun = new funcionario(CPF); 
+           fun.setVisible(true); 
+       }
+            
+              
+        dispose();
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -236,14 +242,15 @@ public class PessoaFisica extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PessoaFisica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PessoaFisicaClasse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PessoaFisica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PessoaFisicaClasse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PessoaFisica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PessoaFisicaClasse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PessoaFisica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PessoaFisicaClasse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

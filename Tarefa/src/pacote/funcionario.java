@@ -5,6 +5,12 @@
  */
 package pacote;
 import pacote.Tela;
+import classes.PessoaFisicaClasse;
+import backend.ControllerPessoas;
+import static pacote.PessoaFisica.CPF;
+import static pacote.PessoaFisica.DataNascimento;
+import static pacote.PessoaFisica.RG;
+import static pacote.PessoaFisica.pessoa2;
 /**
  *
  * @author vinicius
@@ -12,12 +18,15 @@ import pacote.Tela;
 public class funcionario extends javax.swing.JFrame{
 
     String Comissao, Salario, DataContratacao; 
-    
+    static String CPF_1;
+   
+    ControllerPessoas control = new ControllerPessoas();
     /**
      * Creates new form formularioFuncionario
      */
-    public funcionario() {
+    public funcionario(String CPF) {
         initComponents();
+        CPF_1 = CPF;
     }
 
     /**
@@ -162,6 +171,19 @@ public class funcionario extends javax.swing.JFrame{
         Comissao = jTextField3.getText(); 
         Salario = jTextField2.getText(); 
         DataContratacao = jFormattedTextField1.getText(); 
+        
+        boolean res;
+        res = control.InsereFuncionario(CPF,Salario,Comissao,DataContratacao);
+        if(res == true)
+        {
+            System.out.println("Funcionario inserido com sucesso!");
+        }else{
+            System.out.println("Falha em inserir Funcionario");
+        }
+        //escreve pessoa fisica no banco oii
+        dispose();
+        
+        
         //escrever funcionario no banco oii 
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -196,7 +218,7 @@ public class funcionario extends javax.swing.JFrame{
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new funcionario().setVisible(true);
+                new funcionario(CPF_1).setVisible(true);
             }
         });
     }

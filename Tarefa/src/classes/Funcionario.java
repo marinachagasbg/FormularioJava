@@ -5,13 +5,13 @@
  */
 package classes;
 
-import classes.PessoaFisica;
+import classes.PessoaFisicaClasse;
 
 /**
  *
  * @author Marina
  */
-public class Funcionario extends PessoaFisica{
+public class Funcionario extends PessoaFisicaClasse{
     public float Salario; 
     public String Comissao; 
     public String DataContratacao; 

@@ -6,6 +6,7 @@
 package backend;
 
 import classes.Pessoa;
+import classes.PessoaFisicaClasse;
 
 import backend.ControllerCidadeEstado;
 import static backend.ControllerCidadeEstado.database;
@@ -23,6 +24,7 @@ public class ControllerPessoas {
     
     static ConnectionDB database = new ConnectionDB();
     
+    // Subrotina Pessoa Generica
     public static boolean InserePessoa(Pessoa pessoa){
         
         boolean retorno;
@@ -39,6 +41,7 @@ public class ControllerPessoas {
         return retorno;
     }
     
+    // Subrotina Pessoa Fisica
     public static boolean InserePessoaFisica(Pessoa pessoa, String CPF, String RG, String DataNascimento){
         
         int id = 0;
@@ -74,6 +77,7 @@ public class ControllerPessoas {
         
     }
     
+    // Subrotina Pessoa Juridica
     public static boolean InserePessoaJuridica(Pessoa pessoa, String CNPJ, String inscr_estadual, String inscr_munincipal, String fax, String website){
         
         int id = 0;
@@ -107,5 +111,40 @@ public class ControllerPessoas {
         
         return false;
         
+    }
+    
+    // Subrotina Funcionario
+    public static boolean InsereFuncionario(String CPF, String Salario, String Comissao, String DataContratacao){
+       
+        int id = 0;
+        ResultSet result;
+        boolean ret;
+       
+        String sql = "SELECT id_pessoa_fisica From PessoaFisica WHERE pessoa_fisica_cpf  = '"+ CPF + "'";
+        System.out.print(sql);
+       
+        result = database.RetornaDadosSQL(sql);
+         
+         try {
+            if(result != null){
+                result.first();
+                id = result.getInt("id_pessoa_fisica");
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+            System.out.println("Erro, este funcionario não existe!!");
+            return false;
+}
+       
+        if (id != 0)
+        {
+            String sql2 = "INSERT INTO Funcionario (funcionario_salario, funcionario_comissao, funcionario_data_contratacao, id_pessoa_fisica)" +
+                 " VALUES ('" + Salario +"','" + Comissao + "','" + DataContratacao + "','"+ id + "')";
+            System.out.println(sql2);
+            ret = database.ExecutaSQL(sql2);
+            return ret;
+        }
+        return false;
+       
     }
 }
