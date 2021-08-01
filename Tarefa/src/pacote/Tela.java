@@ -11,13 +11,19 @@ import pacote.PessoaFisica;
 import pacote.funcionario;
 import pacote.APrimeiraTela;
 
+import classes.Pessoa;
+
+import backend.ControllerPessoas;
+
 /**
  *
  * @author Marina
  */
 public class Tela extends javax.swing.JFrame {
     
-    String RazaoSocial, NomeSocial, Rua, Numero, Complemento, Bairro, CEP, Email, Telefone;  
+    Pessoa pessoa = new Pessoa();
+    
+    ControllerPessoas controllerPessoas = new ControllerPessoas();
    
     /**
      * Creates new form Tela
@@ -163,6 +169,12 @@ public class Tela extends javax.swing.JFrame {
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
+            }
+        });
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
             }
         });
 
@@ -319,16 +331,32 @@ public class Tela extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void getAllText(){                                                      
-        RazaoSocial = jTextField2.getText();    
-        Complemento = jTextField5.getText(); 
-        Rua = jTextField6.getText();     
-        Bairro = jTextField4.getText();   
-        NomeSocial = jTextField3.getText();                     
-        Numero = jTextField7.getText();       
-        CEP = jTextField8.getText();             
-        Email = jTextField11.getText();     
-        Telefone = jTextField12.getText(); 
+    private void registerPessoa(Pessoa pessoa){
+        
+        try{
+            controllerPessoas.InserePessoa(pessoa);
+        }catch(Exception e){
+            System.out.println("Erro no cadastro da pessoa!!");
+        }
+    }
+    
+    
+    private void getAllText(){ 
+        pessoa.RazaoSocial = jTextField2.getText();    
+        pessoa.Complemento = jTextField5.getText(); 
+        pessoa.Rua = jTextField6.getText();     
+        pessoa.Bairro = jTextField4.getText();   
+        pessoa.NomeSocial = jTextField3.getText();                     
+        pessoa.Numero = Float.parseFloat(jTextField7.getText());      
+        pessoa.CEP = jTextField8.getText();             
+        pessoa.Email = jTextField11.getText();     
+        pessoa.Telefone = jTextField12.getText();
+        pessoa.EstadoSigla = jTextField1.getText();
+        pessoa.Cidade = jTextField10.getText();
+        
+        registerPessoa(pessoa);
+        
+        
     }
     
     
@@ -383,6 +411,10 @@ public class Tela extends javax.swing.JFrame {
     private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField10ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
