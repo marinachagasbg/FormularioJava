@@ -5,6 +5,8 @@
  */
 package classes;
 
+import pacote.PessoaFisica;
+
 /**
  *
  * @author Marina

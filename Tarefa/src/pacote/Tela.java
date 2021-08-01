@@ -387,7 +387,7 @@ public class Tela extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         getAllText(); 
-        PessoaFisica pf= new PessoaFisica(); 
+        PessoaFisica pf= new PessoaFisica(pessoa); 
         pf.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
