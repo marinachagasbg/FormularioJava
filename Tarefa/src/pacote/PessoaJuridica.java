@@ -5,6 +5,9 @@
  */
 package pacote;
 import pacote.Tela;
+import classes.Pessoa;
+import static pacote.PessoaFisica.pessoa2;
+import backend.ControllerPessoas;
 
 /**
  *
@@ -14,11 +17,16 @@ public class PessoaJuridica extends javax.swing.JFrame {
     
     String CNPJ, Fax, InscricaoEstadual, Website, InscricaoMunicipal; 
        
+    static Pessoa pessoa2 = new Pessoa();
+    
+    ControllerPessoas control = new ControllerPessoas();
+    
     /**
      * Creates new form PessoaJuridica
      */
-    public PessoaJuridica() {
+    public PessoaJuridica(Pessoa pessoa) {
         initComponents();
+        pessoa2 = pessoa;
     }
 
     /**
@@ -207,11 +215,31 @@ public class PessoaJuridica extends javax.swing.JFrame {
         InscricaoMunicipal = jTextField5.getText(); 
         
         if(jCheckBox1.isSelected()){
-            //escreve empresa no banco oii 
+            boolean res;
+            res = control.InserePessoaJuridica(pessoa2,CNPJ,InscricaoEstadual,InscricaoMunicipal,Fax,Website);
+            if(res == true)
+            {
+                System.out.println("PessoaJuridica inserida com sucesso!");
+            }else{
+               System.out.println("Falha em inserir PessoaJuridica");
+            }
+                //escreve pessoa fisica no banco oii
+            dispose();
         }
         else{
-            //escreve a pessoa juridica no banco oii 
+             //Sem funcionalidade -> pessoa juridica ou empresa não tem diferença no BANCO
+            boolean res;
+            res = control.InserePessoaJuridica(pessoa2,CNPJ,InscricaoEstadual,InscricaoMunicipal,Fax,Website);
+            if(res == true)
+            {
+                System.out.println("PessoaJuridica inserida com sucesso!");
+            }else{
+               System.out.println("Falha em inserir PessoaJuridica");
+            }
+                //escreve pessoa fisica no banco oii
+            dispose();
         }
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
@@ -248,7 +276,7 @@ public class PessoaJuridica extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PessoaJuridica().setVisible(true);
+                new PessoaJuridica(pessoa2).setVisible(true);
             }
         });
     }

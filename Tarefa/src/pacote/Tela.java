@@ -403,7 +403,7 @@ public class Tela extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         getAllText(); 
-        PessoaJuridica pj = new PessoaJuridica(); 
+        PessoaJuridica pj = new PessoaJuridica(pessoa); 
         pj.setVisible(true); 
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed

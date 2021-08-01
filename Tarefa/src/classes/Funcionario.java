@@ -5,7 +5,7 @@
  */
 package classes;
 
-import pacote.PessoaFisica;
+import classes.PessoaFisica;
 
 /**
  *

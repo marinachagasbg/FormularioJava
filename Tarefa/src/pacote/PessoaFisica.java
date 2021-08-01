@@ -25,8 +25,8 @@ public class PessoaFisica extends javax.swing.JFrame {
      * Creates new form PessoaFisica
      */
     public PessoaFisica(Pessoa pessoa) {
-        pessoa2 = pessoa;
         initComponents();
+        pessoa2 = pessoa;
     }
 
     /**
@@ -196,7 +196,7 @@ public class PessoaFisica extends javax.swing.JFrame {
           
             }
                 //escreve pessoa fisica no banco oii
-          dispose();
+            dispose();
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
