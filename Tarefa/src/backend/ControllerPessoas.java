@@ -148,4 +148,19 @@ public class ControllerPessoas {
        
     }
     
+    public static ResultSet getAllPessoas()
+    {
+
+        ResultSet resultado;
+
+        
+        String sql = "SELECT * from Pessoa";
+        
+        
+        resultado = database.RetornaDadosSQL(sql);
+        
+        return resultado;
+      
+    }
+    
 }
